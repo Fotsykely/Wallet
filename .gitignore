@@ -1,0 +1,7 @@
+node_modules/
+release/
+wallet.db
+*.db
+*.sqlite
+dist/
+.DS_Store

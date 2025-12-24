@@ -1,0 +1,36 @@
+{
+  "name": "wallet",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"npm run dev --prefix Wallet-front\" \"electron .\"",
+    "build": "npm run build --prefix Wallet-front && electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.Wallet.app",
+    "productName": "Wallet",
+    "files": [
+      "main.js",
+      "Wallet-back/**/*",
+      "Wallet-front/dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    }
+  }
+}

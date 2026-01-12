@@ -41,7 +41,11 @@ function createWindow() {
   try {
     serverProcess = fork(serverPath, [userDataPath], {
       silent: false,
-      stdio: ['pipe', 'pipe', 'pipe', 'ipc']
+      stdio: ['pipe', 'pipe', 'pipe', 'ipc'],
+      env: {
+        ...process.env,
+        USER_DATA_PATH: userDataPath
+      }
     });
 
     console.log('✅ Server process created with PID:', serverProcess.pid);

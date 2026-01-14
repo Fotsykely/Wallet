@@ -5,3 +5,4 @@ wallet.db
 *.sqlite
 dist/
 .DS_Store
+copilot-instructions.md
